@@ -1,0 +1,22 @@
+class Vehiculo():
+
+    def __init__(self, color, ruedas, puertas):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+
+
+class Coche(Vehiculo):
+
+    def __init__(self, color, ruedas, puertas, velocidad, cilindrada):
+        Vehiculo.__init__(self, color, ruedas, puertas)  # Tambien super().__init__(color,ruedas,puertas)
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+        
+    def saludar(self):
+        print("El coche es de color:",coche.color,"\nTiene", coche.ruedas, "ruedas y", coche.puertas,"puertas. Su velocidad es de",coche.velocidad,"y la cilindrada",coche.cilindrada)
+
+        
+coche = Coche("Verde", 4, 3, 60, 4)
+
+coche.saludar()
