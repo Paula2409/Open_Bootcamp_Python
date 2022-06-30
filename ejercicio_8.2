@@ -1,0 +1,21 @@
+import pickle
+
+class Vehiculo():
+  def __init__(self, marca, modelo):
+    self.marca = marca
+    self.modelo = modelo
+    
+  def __str__(self):
+    return f"La marca del auto es {self.marca} y el modelo es {self.modelo}"
+    
+v1 = Vehiculo("Ford", "Ranger")
+print(v1)
+
+f = open('vehiculo', 'wb')
+
+pickle.dump(v1, f)
+
+print(type(v1))
+
+print(f)
+f.close()
