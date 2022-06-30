@@ -1,0 +1,9 @@
+f = open('archivo.txt', 'w')
+f.write('Hola, aqui estoy escribiendo en el archivo que acabo de crear\n')
+f.write('Esta es otra linea!\n')
+f.close()
+
+f = open('archivo.txt', 'r+')
+f.readline()
+f.write('Aqui la tercer linea\n')
+f.close()
