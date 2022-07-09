@@ -1,0 +1,27 @@
+import sqlite3
+
+
+conn = sqlite3.connect('escuela.sql')
+cursor = conn.cursor()
+
+cursor.execute("CREATE TABLE if not exists alumnos (id INTEGER PRIMARY KEY, nombre TEXT, apellido TEXT)")
+
+cursor.execute("INSERT INTO alumnos VALUES(1,'Laura','Martinez')")
+cursor.execute("INSERT INTO alumnos VALUES(2,'Jose','Gomez')")
+cursor.execute("INSERT INTO alumnos VALUES(3,'Monica','Romano')")
+cursor.execute("INSERT INTO alumnos VALUES(4,'Lautaro','Gutierrez')")
+cursor.execute("INSERT INTO alumnos VALUES(5,'Maria','Moreno')")
+cursor.execute("INSERT INTO alumnos VALUES(6,'Mario','Alba')")
+cursor.execute("INSERT INTO alumnos VALUES(7,'Carlos','Gonzalez')")
+cursor.execute("INSERT INTO alumnos VALUES(8,'Paula','Mrales')")
+
+conn.commit()
+
+cursor.execute("SELECT * FROM alumnos WHERE id = '2'")
+
+datos = cursor.fetchall()
+
+print(datos)
+
+cursor.close()
+conn.close()
